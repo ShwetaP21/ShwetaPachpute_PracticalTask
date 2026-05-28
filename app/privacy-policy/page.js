@@ -111,16 +111,24 @@ export default function PrivacyPolicy() {
         </div>
       </div>
 
-      <div className="md:hidden sticky top-0 z-10 bg-white border-b border-gray-100 overflow-x-auto flex gap-1 px-4 py-2 scrollbar-hide">
+      <div className="md:hidden sticky top-0 z-10 bg-white overflow-x-auto flex scrollbar-hide">
         {NAV_ITEMS.map(({ id, label }) => (
           <button
             key={id}
             onClick={() => scrollTo(id)}
-            className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold border transition-all shrink-0 ${
-              mobileTabActive === id
-                ? "bg-[#FF3E1D] text-white border-[#FF3E1D]"
-                : "bg-white text-gray-500 border-gray-200"
-            }`}
+            style={{
+              background: "none",
+              border: "none",
+              borderBottom: mobileTabActive === id ? "2px solid #FF3E1D" : "2px solid transparent",
+              color: mobileTabActive === id ? "#111111" : "#9ca3af",
+              fontWeight: mobileTabActive === id ? "600" : "500",
+              fontSize: "12px",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+              padding: "12px 16px",
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
           >
             {label}
           </button>
@@ -488,7 +496,7 @@ function SectionHeader({ num, iconKey, title }) {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-[#FF3E1D] bg-[#FFF0EE] rounded-full shrink-0">
+          <span className="inline-flex items-center  justify-center  w-[29.27px] h-[20px] text-xs font-bold text-[#FF3E1D] bg-[#FFF0EE] rounded-full shrink-0">
             {num}
           </span>
           <h2 className="text-2xl md:text-[26px] font-bold text-gray-900 leading-tight tracking-tight">
@@ -502,7 +510,7 @@ function SectionHeader({ num, iconKey, title }) {
 
 function NumBadge({ n }) {
   return (
-    <span className="bg-[#FF3E1D] text-white rounded-md text-xs font-bold px-2 py-0.5">
+    <span className="bg-[#FFF0EE] text-[#FF3E1D] rounded-lg text-sm font-bold px-3 py-1.5">
       {n}
     </span>
   );

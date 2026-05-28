@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
               onClick={() => scrollTo(id)}
               className={`flex items-center gap-2.5 w-full text-left rounded-lg px-3 py-2 mb-0.5 text-[13px] transition-all cursor-pointer border-none ${
                 activeSection === id
-                  ? "bg-[#FFF0EE] text-[#FF3E1D] font-semibold"
+                  ? "bg-[#FFF0EE] text-gray-500 "
                   : "bg-transparent text-gray-500 font-normal hover:bg-gray-50"
               }`}
             >
@@ -152,38 +152,53 @@ export default function PrivacyPolicy() {
 
           <section id="about" className="scroll-mt-6">
             <SectionHeader num="01" iconKey="about" title="About Aavoride" />
+            <div className="md:pl-[72px]">
             <p className="text-sm text-gray-500 leading-relaxed">
               Aavoride provides a modern transportation platform connecting users with reliable drivers.
               This policy describes how we collect, use, and protect your information across our mobile
               app and website.
             </p>
+            </div>
           </section>
 
           <section id="info-collect" className="scroll-mt-6">
-            <SectionHeader num="02" iconKey="info-collect" title="Information We Collect" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <InfoCard
-                title="For Customers:"
-                items={[
-                  "Contact details Full name, Mobile number, Email address (optional),",
-                  "Pickup & drop location, Travel details you submit and Communication preferences",
-                ]}
-              />
-              <InfoCard
-                title="For Drivers:"
-                items={["Identification documents, vehicle information, location data, and background check results."]}
-              />
-            </div>
-            <InfoCard
-              title="Automatically Collected:"
-              items={["IP address, device type, browser information, and app usage statistics."]}
-              wide
-            />
-          </section>
+  <SectionHeader num="02" iconKey="info-collect" title="Information We Collect" />
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 md:pl-[72px]">
+    <InfoCard
+      title="For Customers:"
+      items={[
+        "Contact details Full name, Mobile number, Email address (optional),",
+        "Pickup & drop location, Travel details you submit and Communication preferences",
+      ]}
+      variant="default"
+    />
+    <InfoCard
+      title="For Drivers:"
+      items={[
+        "Identification documents, vehicle information, location data, and background check results."
+      ]}
+      variant="drivers"
+    />
+  </div>
+  <div className="pl-[72px]">
+
+  <InfoCard
+    title="Automatically Collected:"
+    items={[
+      "IP address, device type, browser information, and app usage statistics."
+    ]}
+    variant="auto"
+    wide
+  />
+  </div>
+
+</section>
 
           <section id="how-we-use" className="scroll-mt-6">
             <SectionHeader num="03" iconKey="how-we-use" title="How We Use Your Information" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 md:pl-[72px]">
+              
               {[
                 "To provide and manage ride-hailing services.",
                 "To verify identity and ensure safety standards.",
@@ -223,7 +238,7 @@ export default function PrivacyPolicy() {
 
           <section id="info-sharing" className="scroll-mt-6">
             <SectionHeader num="04" iconKey="info-sharing" title="Information Sharing" />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 md:pl-[72px]">
               {[
                 { emoji: "👤", title: "With Other Users:", desc: "We share names and locations between customers and drivers to facilitate the ride." },
                 { emoji: "⚙️", title: "Service Providers:", desc: "Third-party vendors performing payment processing, data analysis, and email delivery." },
@@ -265,6 +280,7 @@ export default function PrivacyPolicy() {
 
           <section id="security" className="scroll-mt-6">
             <SectionHeader num="06" iconKey="user-rights" title="User Rights" />
+            <div className="md:pl-[72px]">
             <p className="text-sm text-gray-500 leading-relaxed mb-5">
               You have the right to access, correct, or delete your personal information. You may also
               object to processing or request data portability through your account settings or by
@@ -280,6 +296,7 @@ export default function PrivacyPolicy() {
               <button className="flex items-center gap-2 bg-white text-gray-700 rounded-full px-5 py-2.5 text-sm font-semibold border border-gray-200 cursor-pointer hover:border-[#FF3E1D] transition-colors">
                 ↩ Opt-out
               </button>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -290,7 +307,7 @@ export default function PrivacyPolicy() {
                 { emoji: "🔗", title: "Third-Party Links", desc: "Our platform may contain links to external sites. We are not responsible for the privacy practices of those third parties." },
               ].map((item) => (
                 <div key={item.title}>
-                  <h4 className="flex items-center gap-2 text-sm font-bold mb-2 text-[#FF3E1D]">
+                  <h4 className="flex items-center gap-2 text-sm font-bold mb-2 text-black">
                     <span>{item.emoji}</span> {item.title}
                   </h4>
                   <p className="text-[13px] text-gray-500 leading-relaxed">{item.desc}</p>
@@ -347,34 +364,29 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
-
 function SectionHeader({ num, iconKey, title }) {
   const icon = sectionIcons[iconKey];
 
   return (
-    <div className="flex items-start gap-5 mb-6">
-      <div className="relative flex-shrink-0">
-        <div 
-          className="w-14 h-14 rounded-3xl flex items-center justify-center overflow-hidden"
+    <div className="mb-4">
+      <div className="flex items-center gap-4">
+        <div
+          className="hidden md:flex w-14 h-14 shrink-0 rounded-3xl items-center justify-center"
           style={{
-            background: 'linear-gradient(135deg, #FF3E1D 0%, #FF8A75 100%)',
-            boxShadow: '0px 10px 15px -3px rgba(255, 62, 29, 0.3), 0px 4px 6px -4px rgba(255, 62, 29, 0.3)',
+            background: "linear-gradient(135deg, #FF3E1D 0%, #FF8A75 100%)",
+            boxShadow: "0px 10px 15px -3px rgba(255, 62, 29, 0.3), 0px 4px 6px -4px rgba(255, 62, 29, 0.3)",
           }}
         >
-          {/* Icon - Smaller & Centered */}
           <div className="text-white w-6 h-6 flex items-center justify-center">
             {icon}
           </div>
         </div>
-      </div>
 
-      {/* Title + Number */}
-      <div className="pt-1">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-[#FF3E1D] bg-[#FFF0EE] rounded-full">
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-[#FF3E1D] bg-[#FFF0EE] rounded-full shrink-0">
             {num}
           </span>
-          <h2 className="text-[26px] font-bold text-gray-900 leading-none tracking-tight">
+          <h2 className="text-2xl md:text-[26px] font-bold text-gray-900 leading-tight tracking-tight">
             {title}
           </h2>
         </div>
@@ -391,13 +403,19 @@ function NumBadge({ n }) {
   );
 }
 
-function InfoCard({ title, items, wide }) {
+function InfoCard({ title, items, wide, variant = "default" }) {
+  const bgColor =  variant === "auto" 
+    ? "bg-[#FFF5F2] border border-[#FFCCC4]" 
+    : "bg-[#F8FAFC] border border-gray-100"; 
+
   return (
-    <div className={`bg-gray-50 rounded-xl p-4 border border-gray-100 ${wide ? "md:col-span-2" : ""}`}>
-      <p className="text-[13px] font-bold text-[#FF3E1D] mb-2">• {title}</p>
-      {items.map((item, i) => (
-        <p key={i} className="text-[13px] text-gray-500 leading-relaxed mb-1">{item}</p>
-      ))}
+    <div className={`${bgColor} rounded-2xl p-5 shadow-sm`}>
+      <p className="text-[13px] font-bold text-[#FF3E1D] mb-3">• {title}</p>
+      <ul className="text-[13px] text-gray-600 leading-relaxed space-y-1.5">
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -49,7 +49,6 @@ export default function Footer() {
   return (
     <footer className="mt-12 md:bg-[#FFF1EF] relative overflow-hidden">
       
-      {/* Watermark - Hidden on mobile */}
       <div 
         className="absolute left-1/2 -translate-x-1/2 pointer-events-none select-none z-0 hidden md:block"
         style={{ bottom: "-28px", opacity: 0.085 }}
@@ -62,10 +61,8 @@ export default function Footer() {
         </span>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-[1280px] mx-auto px-5 md:px-10 pt-12 md:pt-14 pb-16 md:pb-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 relative z-10">
         
-        {/* Brand */}
         <div>
           <p className="font-extrabold text-2xl md:text-[28px] leading-none text-[#FF3E1D] tracking-tight mb-1">
             AAVORide
@@ -90,7 +87,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="md:pl-4 lg:pl-8">
           <p className="font-bold text-base mb-5 text-gray-900">Quick Links</p>
           {["Home", "Our Services", "Become a Partner", "Blog", "FAQ"].map((link) => (
@@ -104,12 +100,10 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Contact Us */}
         <div>
           <p className="font-bold text-base mb-5 text-gray-900">Contact Us</p>
 
           <div className="space-y-4">
-            {/* Email Support */}
             <div className="bg-white rounded-2xl p-5 flex gap-4 items-center shadow-sm">
               <div className="w-11 h-10 bg-[#EFF4FF] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +116,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Headquarters */}
             <div className="bg-white rounded-2xl p-5 flex gap-4 items-center shadow-sm">
               <div className="w-11 h-10 bg-[#EFF4FF] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +131,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="md:bg-[#FFF1EF] md:border-t md:border-[#FFCCC4] py-6">
         <div className="max-w-[1280px] mx-auto px-5 md:px-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">

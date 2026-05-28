@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div style={{ background: "linear-gradient(135deg, #FF3E1D 0%, #EC7F6C 100%)" }}>
+      <div className="bg-gradient-to-b from-[#FF3E1D] via-[#FF5A3D] to-[#EC7F6C]">
         <Navbar />
 
         <div className="text-center px-6 pt-12 pb-16 max-w-[700px] mx-auto">

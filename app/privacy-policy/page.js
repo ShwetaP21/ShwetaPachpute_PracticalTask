@@ -13,6 +13,55 @@ const NAV_ITEMS = [
   { id: "contact", label: "Contact Support", num: "14" },
 ];
 
+const sectionIcons = {
+  about: (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 26C20.6274 26 26 20.6274 26 14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14C2 20.6274 7.37258 26 14 26Z" stroke="white" strokeWidth="2.5"/>
+      <path d="M14 18V14" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+      <circle cx="14" cy="9" r="1.8" fill="white"/>
+    </svg>
+  ),
+  "info-collect": (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 8H23M5 14H23M5 20H15" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+      <rect x="3" y="3" width="22" height="22" rx="4" stroke="white" strokeWidth="2.5"/>
+    </svg>
+  ),
+  "how-we-use": (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 4L4 14L14 24L24 14L14 4Z" stroke="white" strokeWidth="2.5" strokeLinejoin="round"/>
+      <circle cx="14" cy="14" r="4" fill="white"/>
+    </svg>
+  ),
+  "info-sharing": (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 10L24 16L18 22" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M10 10L4 16L10 22" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+    </svg>
+  ),
+  "data-values": (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 4V24M4 14H24" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+    </svg>
+  ),
+  security: (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 4L6 8V14C6 18 10 22 14 24C18 22 22 18 22 14V8L14 4Z" stroke="white" strokeWidth="2.5"/>
+    </svg>
+  ),
+  "user-rights":(
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.95 13.55L12.6 7.9L11.175 6.475L6.95 10.7L4.85 8.6L3.425 10.025L6.95 13.55ZM8 20C5.68333 19.4167 3.77083 18.0875 2.2625 16.0125C0.754167 13.9375 0 11.6333 0 9.1V3L8 0L16 3V9.1C16 11.6333 15.2458 13.9375 13.7375 16.0125C12.2292 18.0875 10.3167 19.4167 8 20ZM8 17.9C9.73333 17.35 11.1667 16.25 12.3 14.6C13.4333 12.95 14 11.1１67 １4 9.１V4.３７５L8 ２.１２５L２ 4.３７５V9.１C２ １１.１１６７ ２.５６６６７ １２.９５ ３.７ １４．６C４．８３３３３ １６．２５ ６．２６６６７ １７．３５ ８ １７．９Z" fill="white"/>
+</svg>
+  ),
+  contact: (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 21V19C19 17.3431 17.6569 16 16 16H12C10.3431 16 9 17.3431 9 19V21" stroke="white" strokeWidth="2.5"/>
+      <circle cx="14" cy="10" r="4" stroke="white" strokeWidth="2.5"/>
+    </svg>
+  ),
+};
+
 export default function PrivacyPolicy() {
   const [activeSection, setActiveSection] = useState("about");
   const [mobileTabActive, setMobileTabActive] = useState("about");
@@ -102,7 +151,7 @@ export default function PrivacyPolicy() {
         <main className="flex-1 flex flex-col gap-14 min-w-0">
 
           <section id="about" className="scroll-mt-6">
-            <SectionHeader num="01" emoji="ℹ️" title="About Aavoride" />
+            <SectionHeader num="01" iconKey="about" title="About Aavoride" />
             <p className="text-sm text-gray-500 leading-relaxed">
               Aavoride provides a modern transportation platform connecting users with reliable drivers.
               This policy describes how we collect, use, and protect your information across our mobile
@@ -111,7 +160,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="info-collect" className="scroll-mt-6">
-            <SectionHeader num="02" emoji="📋" title="Information We Collect" />
+            <SectionHeader num="02" iconKey="info-collect" title="Information We Collect" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <InfoCard
                 title="For Customers:"
@@ -133,7 +182,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="how-we-use" className="scroll-mt-6">
-            <SectionHeader num="03" emoji="⚙️" title="How We Use Your Information" />
+            <SectionHeader num="03" iconKey="how-we-use" title="How We Use Your Information" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2">
               {[
                 "To provide and manage ride-hailing services.",
@@ -173,7 +222,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="info-sharing" className="scroll-mt-6">
-            <SectionHeader num="04" emoji="↗️" title="Information Sharing" />
+            <SectionHeader num="04" iconKey="info-sharing" title="Information Sharing" />
             <div className="flex flex-col gap-4">
               {[
                 { emoji: "👤", title: "With Other Users:", desc: "We share names and locations between customers and drivers to facilitate the ride." },
@@ -215,7 +264,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section id="security" className="scroll-mt-6">
-            <SectionHeader num="08" emoji="🔒" title="User Rights" />
+            <SectionHeader num="06" iconKey="user-rights" title="User Rights" />
             <p className="text-sm text-gray-500 leading-relaxed mb-5">
               You have the right to access, correct, or delete your personal information. You may also
               object to processing or request data portability through your account settings or by
@@ -299,16 +348,37 @@ export default function PrivacyPolicy() {
   );
 }
 
-function SectionHeader({ num, emoji, title }) {
+function SectionHeader({ num, iconKey, title }) {
+  const icon = sectionIcons[iconKey];
+
   return (
-    <div className="flex items-center gap-4 mb-5">
-      <div className="w-11 h-11 rounded-full bg-[#FF3E1D] flex items-center justify-center text-lg text-white shrink-0">
-        {emoji}
+    <div className="flex items-start gap-5 mb-6">
+      <div className="relative flex-shrink-0">
+        <div 
+          className="w-14 h-14 rounded-3xl flex items-center justify-center overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #FF3E1D 0%, #FF8A75 100%)',
+            boxShadow: '0px 10px 15px -3px rgba(255, 62, 29, 0.3), 0px 4px 6px -4px rgba(255, 62, 29, 0.3)',
+          }}
+        >
+          {/* Icon - Smaller & Centered */}
+          <div className="text-white w-6 h-6 flex items-center justify-center">
+            {icon}
+          </div>
+        </div>
       </div>
-      <h2 className="text-2xl md:text-[26px] font-bold flex items-center gap-2.5 m-0">
-        <span className="text-[13px] font-bold text-[#FF3E1D]">{num}</span>
-        {title}
-      </h2>
+
+      {/* Title + Number */}
+      <div className="pt-1">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-[#FF3E1D] bg-[#FFF0EE] rounded-full">
+            {num}
+          </span>
+          <h2 className="text-[26px] font-bold text-gray-900 leading-none tracking-tight">
+            {title}
+          </h2>
+        </div>
+      </div>
     </div>
   );
 }

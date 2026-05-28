@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-b from-[#FF3E1D] via-[#FF5A3D] to-[#EC7F6C]">
+      <div className="bg-linear-to-b from-[#FF3E1D] via-[#FF5A3D] to-[#EC7F6C]">
         <Navbar />
 
         <div className="text-center px-6 pt-12 pb-16 max-w-[700px] mx-auto">
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
           <button
             key={id}
             onClick={() => scrollTo(id)}
-            className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold border transition-all flex-shrink-0 ${
+            className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold border transition-all shrink-0 ${
               mobileTabActive === id
                 ? "bg-[#FF3E1D] text-white border-[#FF3E1D]"
                 : "bg-white text-gray-500 border-gray-200"
@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
 
       <div className="max-w-[1120px] mx-auto px-6 py-12 flex gap-12 items-start">
 
-        <aside className="hidden md:block w-[220px] flex-shrink-0 sticky top-6">
+        <aside className="hidden md:block w-[220px] shrink-0 sticky top-6">
           <p className="text-[11px] font-bold tracking-[1.5px] text-gray-400 mb-4">NAVIGATION</p>
           {NAV_ITEMS.map(({ id, label, num }) => (
             <button
@@ -142,19 +142,19 @@ export default function PrivacyPolicy() {
                 "To communicate service updates and marketing (with consent).",
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 items-start bg-gray-50 rounded-xl p-4">
-                  <span className="text-[#FF3E1D] text-lg mt-0.5 flex-shrink-0">⊙</span>
+                  <span className="text-[#FF3E1D] text-lg mt-0.5 shrink-0">⊙</span>
                   <span className="text-[13px] text-gray-600 leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
             <div className="flex gap-3 items-start px-1 py-3">
-              <span className="text-[#FF3E1D] text-lg flex-shrink-0">⊙</span>
+              <span className="text-[#FF3E1D] text-lg shrink-0">⊙</span>
               <span className="text-[13px] text-gray-600">To improve our platform&apos;s user experience and technical stability.</span>
             </div>
 
             <div className="bg-[#FFF5F3] border border-[#FFD5CC] rounded-2xl p-6 mt-2">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-9 h-9 bg-[#FF3E1D] rounded-xl flex items-center justify-center text-lg flex-shrink-0">🛡️</div>
+                <div className="w-9 h-9 bg-[#FF3E1D] rounded-xl flex items-center justify-center text-lg shrink-0">🛡️</div>
                 <h3 className="text-lg md:text-xl font-bold m-0">Our Commitment: What We Do NOT Do</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -181,7 +181,7 @@ export default function PrivacyPolicy() {
                 { emoji: "⚖️", title: "Legal Authorities:", desc: "When required by law or to protect the safety and rights of Aavoride and its users." },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 items-start">
-                  <span className="text-[#FF3E1D] text-xl mt-0.5 flex-shrink-0">{item.emoji}</span>
+                  <span className="text-[#FF3E1D] text-xl mt-0.5 shrink-0">{item.emoji}</span>
                   <p className="text-[13px] text-gray-600 leading-relaxed">
                     <span className="font-bold text-gray-800">{item.title}</span>{" "}
                     {item.desc}
@@ -250,7 +250,7 @@ export default function PrivacyPolicy() {
             </div>
 
             <div className="border border-[#FFD5CC] rounded-2xl p-6 flex gap-4 items-start">
-              <div className="w-11 h-11 bg-[#FF3E1D] rounded-xl flex items-center justify-center text-xl flex-shrink-0">🕐</div>
+              <div className="w-11 h-11 bg-[#FF3E1D] rounded-xl flex items-center justify-center text-xl shrink-0">🕐</div>
               <div>
                 <h3 className="text-lg font-bold mb-2">Policy Updates</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">
@@ -266,7 +266,7 @@ export default function PrivacyPolicy() {
           <section id="contact" className="scroll-mt-6">
             <div className="border border-gray-200 rounded-2xl p-6 md:p-8">
               <div className="flex gap-4 items-start mb-6">
-                <div className="w-11 h-11 bg-[#FF3E1D] rounded-xl flex items-center justify-center text-xl flex-shrink-0">📞</div>
+                <div className="w-11 h-11 bg-[#FF3E1D] rounded-xl flex items-center justify-center text-xl shrink-0">📞</div>
                 <div>
                   <h3 className="text-xl font-bold mb-1">Contact Us</h3>
                   <p className="text-[13px] text-gray-400">We&apos;re here to help with your privacy concerns</p>
@@ -280,7 +280,7 @@ export default function PrivacyPolicy() {
                   { label: "ADDRESS", value: "Registered Office Address", emoji: "📍" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-3 items-start">
-                    <span className="text-[#FF3E1D] text-lg mt-1 flex-shrink-0">{item.emoji}</span>
+                    <span className="text-[#FF3E1D] text-lg mt-1 shrink-0">{item.emoji}</span>
                     <div>
                       <p className="text-[10px] font-bold tracking-widest text-gray-400 mb-1">{item.label}</p>
                       <p className="text-[14px] font-bold">{item.value}</p>
@@ -299,11 +299,10 @@ export default function PrivacyPolicy() {
   );
 }
 
-/* ── Sub-components ── */
 function SectionHeader({ num, emoji, title }) {
   return (
     <div className="flex items-center gap-4 mb-5">
-      <div className="w-11 h-11 rounded-full bg-[#FF3E1D] flex items-center justify-center text-lg text-white flex-shrink-0">
+      <div className="w-11 h-11 rounded-full bg-[#FF3E1D] flex items-center justify-center text-lg text-white shrink-0">
         {emoji}
       </div>
       <h2 className="text-2xl md:text-[26px] font-bold flex items-center gap-2.5 m-0">

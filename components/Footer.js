@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Email Support Card */}
           <div className="bg-white rounded-2xl p-4 mb-4 flex gap-4 items-center shadow-sm">
-            <div className="w-10 h-10 bg-[#FF3E1D] rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-[#FF3E1D] rounded-xl flex items-center justify-center shrink-0">
               <span className="text-white text-2xl">✉️</span>
             </div>
             <div>
@@ -94,7 +94,7 @@ export default function Footer() {
 
           {/* Headquarters Card */}
           <div className="bg-white rounded-2xl p-4 flex gap-4 items-center shadow-sm">
-            <div className="w-10 h-10 bg-[#FF3E1D] rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-[#FF3E1D] rounded-xl flex items-center justify-center shrink-0">
               <span className="text-white text-2xl">📍</span>
             </div>
             <div>
